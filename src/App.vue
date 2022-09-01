@@ -8,7 +8,7 @@
   <input type="number" name="" v-model="rate">
   <input type="number" name="" v-model="time">
 
-  <p> principal {{principal}} * rate {{rate}} *  time {{time}} /100= {{simpleInterest}}</p>
+  <p> principal {{principal}} * rate {{rate}} *  time {{time}} /100 = simpleInterest  {{simpleInterest}}</p>
 
   
 
