@@ -1,16 +1,12 @@
 <template>
-  <h1>Method Properties</h1>
-  <p>Variable {{var1}}</p>
-  <p>Variable {{var2}}</p>
-  <input type="number" name="" v-model="pass">
-  <p>{{var1}} * {{var2}} * {{pass}} = {{functionMethon(pass)}}</p>
-  <input type="number" name="" v-model="principal">
-  <input type="number" name="" v-model="rate">
-  <input type="number" name="" v-model="time">
+ 
 
-  <p> principal {{principal}} * rate {{rate}} *  time {{time}} /100 = simpleInterest  {{simpleInterest}}</p>
+  <input type="text" v-model="website" placeholder="type your website name"/>
+  <a v-bind:href="website">My Website </a>
 
-  
+  <h4 v-bind:class="{active:activeBackground}">I am heading or leading to</h4>
+<input type="text" v-model="customProp"/>
+  <h1 :style="{color:customProp}">I am heading or leading to</h1>
 
 </template>
 
@@ -19,32 +15,14 @@
 
 export default {
   name: 'App',
-  data(){
-   return{
-    var1:10,
-    var2:20,
-    pass:"",
-    principal:"",
-rate:"",
-time:"",
-   }
-  },
-  components: {
-    // HelloWorld
-  },
-methods:
-{
-  functionMethon(pass)
+  data()
   {
-    return this.var1* this.var2 *pass
+    return {
+      website:"https://www.google.com",
+      activeBackground:true,
+      customProp : ""
+    }
   }
-},computed:
-{
- simpleInterest()
-  {
-    return this.principal* this.rate *this.time/100;
-  } 
-}
 }
 </script>
 
@@ -56,5 +34,10 @@ methods:
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.active 
+{
+  background: lightblue;
 }
 </style>
